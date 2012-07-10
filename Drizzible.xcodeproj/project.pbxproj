@@ -1,0 +1,306 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3905AFF515AC7D13006AE0F3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3905AFF415AC7D13006AE0F3 /* UIKit.framework */; };
+		3905AFF715AC7D13006AE0F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3905AFF615AC7D13006AE0F3 /* Foundation.framework */; };
+		3905AFF915AC7D13006AE0F3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3905AFF815AC7D13006AE0F3 /* CoreGraphics.framework */; };
+		3905AFFF15AC7D13006AE0F3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3905AFFD15AC7D13006AE0F3 /* InfoPlist.strings */; };
+		3905B00115AC7D13006AE0F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3905B00015AC7D13006AE0F3 /* main.m */; };
+		3905B00515AC7D13006AE0F3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3905B00415AC7D13006AE0F3 /* AppDelegate.m */; };
+		3905B00815AC7D13006AE0F3 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3905B00615AC7D13006AE0F3 /* MainStoryboard.storyboard */; };
+		3905B00B15AC7D13006AE0F3 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3905B00A15AC7D13006AE0F3 /* FirstViewController.m */; };
+		3905B00D15AC7D13006AE0F3 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 3905B00C15AC7D13006AE0F3 /* first.png */; };
+		3905B00F15AC7D13006AE0F3 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3905B00E15AC7D13006AE0F3 /* first@2x.png */; };
+		3905B01215AC7D13006AE0F3 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3905B01115AC7D13006AE0F3 /* SecondViewController.m */; };
+		3905B01415AC7D13006AE0F3 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 3905B01315AC7D13006AE0F3 /* second.png */; };
+		3905B01615AC7D13006AE0F3 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3905B01515AC7D13006AE0F3 /* second@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3905AFF015AC7D13006AE0F3 /* Drizzible.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drizzible.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3905AFF415AC7D13006AE0F3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3905AFF615AC7D13006AE0F3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3905AFF815AC7D13006AE0F3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3905AFFC15AC7D13006AE0F3 /* Drizzible-Info.plist */ = {isa = PBXFileReference; path = "Drizzible-Info.plist"; sourceTree = "<group>"; };
+		3905AFFE15AC7D13006AE0F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3905B00015AC7D13006AE0F3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3905B00215AC7D13006AE0F3 /* Drizzible-Prefix.pch */ = {isa = PBXFileReference; path = "Drizzible-Prefix.pch"; sourceTree = "<group>"; };
+		3905B00315AC7D13006AE0F3 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		3905B00415AC7D13006AE0F3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3905B00715AC7D13006AE0F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		3905B00915AC7D13006AE0F3 /* FirstViewController.h */ = {isa = PBXFileReference; path = FirstViewController.h; sourceTree = "<group>"; };
+		3905B00A15AC7D13006AE0F3 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		3905B00C15AC7D13006AE0F3 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		3905B00E15AC7D13006AE0F3 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		3905B01015AC7D13006AE0F3 /* SecondViewController.h */ = {isa = PBXFileReference; path = SecondViewController.h; sourceTree = "<group>"; };
+		3905B01115AC7D13006AE0F3 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		3905B01315AC7D13006AE0F3 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		3905B01515AC7D13006AE0F3 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3905AFED15AC7D13006AE0F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3905AFF515AC7D13006AE0F3 /* UIKit.framework in Frameworks */,
+				3905AFF715AC7D13006AE0F3 /* Foundation.framework in Frameworks */,
+				3905AFF915AC7D13006AE0F3 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3905AFE515AC7D13006AE0F3 = {
+			isa = PBXGroup;
+			children = (
+				3905AFFA15AC7D13006AE0F3 /* Drizzible */,
+				3905AFF315AC7D13006AE0F3 /* Frameworks */,
+				3905AFF115AC7D13006AE0F3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3905AFF115AC7D13006AE0F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3905AFF015AC7D13006AE0F3 /* Drizzible.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3905AFF315AC7D13006AE0F3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3905AFF415AC7D13006AE0F3 /* UIKit.framework */,
+				3905AFF615AC7D13006AE0F3 /* Foundation.framework */,
+				3905AFF815AC7D13006AE0F3 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3905AFFA15AC7D13006AE0F3 /* Drizzible */ = {
+			isa = PBXGroup;
+			children = (
+				3905B00315AC7D13006AE0F3 /* AppDelegate.h */,
+				3905B00415AC7D13006AE0F3 /* AppDelegate.m */,
+				3905B00615AC7D13006AE0F3 /* MainStoryboard.storyboard */,
+				3905B00915AC7D13006AE0F3 /* FirstViewController.h */,
+				3905B00A15AC7D13006AE0F3 /* FirstViewController.m */,
+				3905B00C15AC7D13006AE0F3 /* first.png */,
+				3905B00E15AC7D13006AE0F3 /* first@2x.png */,
+				3905B01015AC7D13006AE0F3 /* SecondViewController.h */,
+				3905B01115AC7D13006AE0F3 /* SecondViewController.m */,
+				3905B01315AC7D13006AE0F3 /* second.png */,
+				3905B01515AC7D13006AE0F3 /* second@2x.png */,
+				3905AFFB15AC7D13006AE0F3 /* Supporting Files */,
+			);
+			path = Drizzible;
+			sourceTree = "<group>";
+		};
+		3905AFFB15AC7D13006AE0F3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3905AFFC15AC7D13006AE0F3 /* Drizzible-Info.plist */,
+				3905AFFD15AC7D13006AE0F3 /* InfoPlist.strings */,
+				3905B00015AC7D13006AE0F3 /* main.m */,
+				3905B00215AC7D13006AE0F3 /* Drizzible-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3905AFEF15AC7D13006AE0F3 /* Drizzible */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3905B01915AC7D13006AE0F3 /* Build configuration list for PBXNativeTarget "Drizzible" */;
+			buildPhases = (
+				3905AFEC15AC7D13006AE0F3 /* Sources */,
+				3905AFED15AC7D13006AE0F3 /* Frameworks */,
+				3905AFEE15AC7D13006AE0F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Drizzible;
+			productName = Drizzible;
+			productReference = 3905AFF015AC7D13006AE0F3 /* Drizzible.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3905AFE715AC7D13006AE0F3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "No Spoon Software";
+			};
+			buildConfigurationList = 3905AFEA15AC7D13006AE0F3 /* Build configuration list for PBXProject "Drizzible" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3905AFE515AC7D13006AE0F3;
+			productRefGroup = 3905AFF115AC7D13006AE0F3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3905AFEF15AC7D13006AE0F3 /* Drizzible */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3905AFEE15AC7D13006AE0F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3905AFFF15AC7D13006AE0F3 /* InfoPlist.strings in Resources */,
+				3905B00815AC7D13006AE0F3 /* MainStoryboard.storyboard in Resources */,
+				3905B00D15AC7D13006AE0F3 /* first.png in Resources */,
+				3905B00F15AC7D13006AE0F3 /* first@2x.png in Resources */,
+				3905B01415AC7D13006AE0F3 /* second.png in Resources */,
+				3905B01615AC7D13006AE0F3 /* second@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3905AFEC15AC7D13006AE0F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3905B00115AC7D13006AE0F3 /* main.m in Sources */,
+				3905B00515AC7D13006AE0F3 /* AppDelegate.m in Sources */,
+				3905B00B15AC7D13006AE0F3 /* FirstViewController.m in Sources */,
+				3905B01215AC7D13006AE0F3 /* SecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3905AFFD15AC7D13006AE0F3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3905AFFE15AC7D13006AE0F3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3905B00615AC7D13006AE0F3 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3905B00715AC7D13006AE0F3 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3905B01715AC7D13006AE0F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		3905B01815AC7D13006AE0F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3905B01A15AC7D13006AE0F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Drizzible/Drizzible-Prefix.pch";
+				INFOPLIST_FILE = "Drizzible/Drizzible-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3905B01B15AC7D13006AE0F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Drizzible/Drizzible-Prefix.pch";
+				INFOPLIST_FILE = "Drizzible/Drizzible-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3905AFEA15AC7D13006AE0F3 /* Build configuration list for PBXProject "Drizzible" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3905B01715AC7D13006AE0F3 /* Debug */,
+				3905B01815AC7D13006AE0F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3905B01915AC7D13006AE0F3 /* Build configuration list for PBXNativeTarget "Drizzible" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3905B01A15AC7D13006AE0F3 /* Debug */,
+				3905B01B15AC7D13006AE0F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3905AFE715AC7D13006AE0F3 /* Project object */;
+}
