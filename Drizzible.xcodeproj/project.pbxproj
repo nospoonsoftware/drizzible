@@ -20,6 +20,8 @@
 		3905B01215AC7D13006AE0F3 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3905B01115AC7D13006AE0F3 /* SecondViewController.m */; };
 		3905B01415AC7D13006AE0F3 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 3905B01315AC7D13006AE0F3 /* second.png */; };
 		3905B01615AC7D13006AE0F3 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3905B01515AC7D13006AE0F3 /* second@2x.png */; };
+		3905B01D15AC7E09006AE0F3 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3905B01C15AC7E09006AE0F3 /* icon@2x.png */; };
+		3905B01F15AC7E20006AE0F3 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3905B01E15AC7E20006AE0F3 /* icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,21 +29,23 @@
 		3905AFF415AC7D13006AE0F3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3905AFF615AC7D13006AE0F3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3905AFF815AC7D13006AE0F3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		3905AFFC15AC7D13006AE0F3 /* Drizzible-Info.plist */ = {isa = PBXFileReference; path = "Drizzible-Info.plist"; sourceTree = "<group>"; };
+		3905AFFC15AC7D13006AE0F3 /* Drizzible-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Drizzible-Info.plist"; sourceTree = "<group>"; };
 		3905AFFE15AC7D13006AE0F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3905B00015AC7D13006AE0F3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3905B00215AC7D13006AE0F3 /* Drizzible-Prefix.pch */ = {isa = PBXFileReference; path = "Drizzible-Prefix.pch"; sourceTree = "<group>"; };
-		3905B00315AC7D13006AE0F3 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		3905B00215AC7D13006AE0F3 /* Drizzible-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Drizzible-Prefix.pch"; sourceTree = "<group>"; };
+		3905B00315AC7D13006AE0F3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3905B00415AC7D13006AE0F3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3905B00715AC7D13006AE0F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		3905B00915AC7D13006AE0F3 /* FirstViewController.h */ = {isa = PBXFileReference; path = FirstViewController.h; sourceTree = "<group>"; };
+		3905B00915AC7D13006AE0F3 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		3905B00A15AC7D13006AE0F3 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		3905B00C15AC7D13006AE0F3 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		3905B00E15AC7D13006AE0F3 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		3905B01015AC7D13006AE0F3 /* SecondViewController.h */ = {isa = PBXFileReference; path = SecondViewController.h; sourceTree = "<group>"; };
+		3905B01015AC7D13006AE0F3 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		3905B01115AC7D13006AE0F3 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		3905B01315AC7D13006AE0F3 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		3905B01515AC7D13006AE0F3 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		3905B01C15AC7E09006AE0F3 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		3905B01E15AC7E20006AE0F3 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 		3905AFFA15AC7D13006AE0F3 /* Drizzible */ = {
 			isa = PBXGroup;
 			children = (
+				3905B02015AC7E41006AE0F3 /* images */,
 				3905B00315AC7D13006AE0F3 /* AppDelegate.h */,
 				3905B00415AC7D13006AE0F3 /* AppDelegate.m */,
 				3905B00615AC7D13006AE0F3 /* MainStoryboard.storyboard */,
@@ -113,6 +118,16 @@
 				3905B00215AC7D13006AE0F3 /* Drizzible-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3905B02015AC7E41006AE0F3 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				3905B01E15AC7E20006AE0F3 /* icon.png */,
+				3905B01C15AC7E09006AE0F3 /* icon@2x.png */,
+			);
+			name = images;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +187,8 @@
 				3905B00F15AC7D13006AE0F3 /* first@2x.png in Resources */,
 				3905B01415AC7D13006AE0F3 /* second.png in Resources */,
 				3905B01615AC7D13006AE0F3 /* second@2x.png in Resources */,
+				3905B01D15AC7E09006AE0F3 /* icon@2x.png in Resources */,
+				3905B01F15AC7E20006AE0F3 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
