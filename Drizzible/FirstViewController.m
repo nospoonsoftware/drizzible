@@ -27,6 +27,7 @@
 
     [imageView setImage: [UIImage imageNamed:@"icon"]];
     
+    int expectedRow = indexPath.row;
 
     NSString *url = [[shots objectAtIndex: indexPath.row] objectForKey:@"image_url"];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
@@ -38,8 +39,11 @@
          if(error) {
              NSLog(@"%@", error);
          }
-         imageView.image = [UIImage imageWithData:data];
-         [imageView setNeedsDisplay];
+         
+         if(expectedRow == indexPath.row) {
+             imageView.image = [UIImage imageWithData:data];
+             [imageView setNeedsDisplay];
+         }
      }];
     
     return cell;
@@ -52,9 +56,21 @@
     
     self.shots = [[NSMutableArray alloc] init];
     self.tableView.rowHeight = 150;
+}
+
+-(void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://api.dribbble.com/shots/everyone?per_page=30"]];
     
-    NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString: @"http://api.dribbble.com/shots/everyone?per_page=30"]];
-    [self performSelectorOnMainThread:@selector(parseDatShit:) withObject:data waitUntilDone:YES];
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:
+     ^(NSURLResponse *response, NSData *data, NSError *error) {
+         if(error) {
+             NSLog(@"%@", error);
+         }
+         [self parseDatShit: data];
+     }];
 }
 
 - (void)parseDatShit:(NSData *)responseData {
@@ -67,6 +83,8 @@
     for(NSDictionary *shot in [json objectForKey:@"shots"]) {
         [self.shots addObject: shot];
     }
+    
+    [self.tableView reloadData];
 }
 
 - (void)viewDidUnload {
