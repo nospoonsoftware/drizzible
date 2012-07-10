@@ -7,28 +7,41 @@
 //
 
 #import "FirstViewController.h"
-#define customRowHeight 150
 
 @interface FirstViewController ()
-
 @end
 
 @implementation FirstViewController
 
-@synthesize tableView;
-@synthesize shots;
+@synthesize tableView, shots;
 
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    int count = [shots count];
-    return count == 0 ? 1 : count;
+    return [shots count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)theTable cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell      = [theTable dequeueReusableCellWithIdentifier:@"ShotCell"];
+    UIImageView     *imageView = (UIImageView*)[cell viewWithTag:1];
+
+    [imageView setImage: [UIImage imageNamed:@"icon"]];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShotCell"];
-    cell.textLabel.text= [[shots objectAtIndex:indexPath.row] objectForKey:@"title"];
+
+    NSString *url = [[shots objectAtIndex: indexPath.row] objectForKey:@"image_url"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+                             
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:
+     ^(NSURLResponse *response, NSData *data, NSError *error) {
+         if(error) {
+             NSLog(@"%@", error);
+         }
+         imageView.image = [UIImage imageWithData:data];
+         [imageView setNeedsDisplay];
+     }];
+    
     return cell;
 }
 
@@ -38,7 +51,7 @@
     [super viewDidLoad];
     
     self.shots = [[NSMutableArray alloc] init];
-    self.tableView.rowHeight = customRowHeight;
+    self.tableView.rowHeight = 150;
     
     NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString: @"http://api.dribbble.com/shots/everyone?per_page=30"]];
     [self performSelectorOnMainThread:@selector(parseDatShit:) withObject:data waitUntilDone:YES];
