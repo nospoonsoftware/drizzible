@@ -1,18 +1,18 @@
 //
-//  FirstViewController.m
+//  ShotsViewController.m
 //  Drizzible
 //
 //  Created by Jerry Nummi on 7/10/12.
 //  Copyright (c) 2012 No Spoon Software. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "ShotsViewController.h"
+#import "ShotViewController.h"
 
-@interface FirstViewController ()
-@property (nonatomic, strong) NSCache *cachedImages;
+@interface ShotsViewController ()
 @end
 
-@implementation FirstViewController
+@implementation ShotsViewController
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [self.shots count];
@@ -54,7 +54,16 @@
     return cell;
 }
 
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+        NSIndexPath *indexPath = [[self.dribbbleView indexPathsForSelectedItems] lastObject];
+        NSDictionary *object = [[self shots] objectAtIndex:indexPath.row];
+        ShotViewController *vc = (ShotViewController *)[segue destinationViewController];
+        vc.itemImage = [self.cachedImages objectForKey:[object valueForKey:@"image_url"]];
+        vc.itemName = [object valueForKey:@"title"];
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -65,7 +74,9 @@
 -(void) viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://api.dribbble.com/shots/everyone?per_page=30"]];
+    if(self.shots.count > 0) { return; }
+
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://api.dribbble.com/shots/popular?per_page=30"]];
     
     [NSURLConnection sendAsynchronousRequest:request
                                        queue:[NSOperationQueue mainQueue]
@@ -86,7 +97,6 @@
                           error:&error];
     
     for(NSDictionary *shot in [json objectForKey:@"shots"]) {
-        NSLog(@"%@", shot);
         [self.shots addObject: shot];
     }
     

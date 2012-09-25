@@ -14,13 +14,10 @@
 		3905B00115AC7D13006AE0F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3905B00015AC7D13006AE0F3 /* main.m */; };
 		3905B00515AC7D13006AE0F3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3905B00415AC7D13006AE0F3 /* AppDelegate.m */; };
 		3905B00815AC7D13006AE0F3 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3905B00615AC7D13006AE0F3 /* MainStoryboard.storyboard */; };
-		3905B00B15AC7D13006AE0F3 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3905B00A15AC7D13006AE0F3 /* FirstViewController.m */; };
-		3905B00D15AC7D13006AE0F3 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 3905B00C15AC7D13006AE0F3 /* first.png */; };
-		3905B00F15AC7D13006AE0F3 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3905B00E15AC7D13006AE0F3 /* first@2x.png */; };
-		3905B01415AC7D13006AE0F3 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 3905B01315AC7D13006AE0F3 /* second.png */; };
-		3905B01615AC7D13006AE0F3 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3905B01515AC7D13006AE0F3 /* second@2x.png */; };
+		3905B00B15AC7D13006AE0F3 /* ShotsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3905B00A15AC7D13006AE0F3 /* ShotsViewController.m */; };
 		3905B01D15AC7E09006AE0F3 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3905B01C15AC7E09006AE0F3 /* icon@2x.png */; };
 		3905B01F15AC7E20006AE0F3 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3905B01E15AC7E20006AE0F3 /* icon.png */; };
+		39FDB5FB161249CB00D46672 /* ShotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FDB5FA161249CB00D46672 /* ShotViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,14 +32,12 @@
 		3905B00315AC7D13006AE0F3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3905B00415AC7D13006AE0F3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3905B00715AC7D13006AE0F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		3905B00915AC7D13006AE0F3 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		3905B00A15AC7D13006AE0F3 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		3905B00C15AC7D13006AE0F3 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		3905B00E15AC7D13006AE0F3 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		3905B01315AC7D13006AE0F3 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		3905B01515AC7D13006AE0F3 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		3905B00915AC7D13006AE0F3 /* ShotsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShotsViewController.h; sourceTree = "<group>"; };
+		3905B00A15AC7D13006AE0F3 /* ShotsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShotsViewController.m; sourceTree = "<group>"; };
 		3905B01C15AC7E09006AE0F3 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		3905B01E15AC7E20006AE0F3 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		39FDB5F9161249CB00D46672 /* ShotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShotViewController.h; sourceTree = "<group>"; };
+		39FDB5FA161249CB00D46672 /* ShotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShotViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,12 +88,10 @@
 				3905B00315AC7D13006AE0F3 /* AppDelegate.h */,
 				3905B00415AC7D13006AE0F3 /* AppDelegate.m */,
 				3905B00615AC7D13006AE0F3 /* MainStoryboard.storyboard */,
-				3905B00915AC7D13006AE0F3 /* FirstViewController.h */,
-				3905B00A15AC7D13006AE0F3 /* FirstViewController.m */,
-				3905B00C15AC7D13006AE0F3 /* first.png */,
-				3905B00E15AC7D13006AE0F3 /* first@2x.png */,
-				3905B01315AC7D13006AE0F3 /* second.png */,
-				3905B01515AC7D13006AE0F3 /* second@2x.png */,
+				39FDB5F9161249CB00D46672 /* ShotViewController.h */,
+				39FDB5FA161249CB00D46672 /* ShotViewController.m */,
+				3905B00915AC7D13006AE0F3 /* ShotsViewController.h */,
+				3905B00A15AC7D13006AE0F3 /* ShotsViewController.m */,
 				3905AFFB15AC7D13006AE0F3 /* Supporting Files */,
 			);
 			path = Drizzible;
@@ -178,10 +171,6 @@
 			files = (
 				3905AFFF15AC7D13006AE0F3 /* InfoPlist.strings in Resources */,
 				3905B00815AC7D13006AE0F3 /* MainStoryboard.storyboard in Resources */,
-				3905B00D15AC7D13006AE0F3 /* first.png in Resources */,
-				3905B00F15AC7D13006AE0F3 /* first@2x.png in Resources */,
-				3905B01415AC7D13006AE0F3 /* second.png in Resources */,
-				3905B01615AC7D13006AE0F3 /* second@2x.png in Resources */,
 				3905B01D15AC7E09006AE0F3 /* icon@2x.png in Resources */,
 				3905B01F15AC7E20006AE0F3 /* icon.png in Resources */,
 			);
@@ -196,7 +185,8 @@
 			files = (
 				3905B00115AC7D13006AE0F3 /* main.m in Sources */,
 				3905B00515AC7D13006AE0F3 /* AppDelegate.m in Sources */,
-				3905B00B15AC7D13006AE0F3 /* FirstViewController.m in Sources */,
+				3905B00B15AC7D13006AE0F3 /* ShotsViewController.m in Sources */,
+				39FDB5FB161249CB00D46672 /* ShotViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +300,7 @@
 				3905B01B15AC7D13006AE0F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

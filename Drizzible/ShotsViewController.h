@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  ShotsViewController.h
 //  Drizzible
 //
 //  Created by Jerry Nummi on 7/10/12.
@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ShotsViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UICollectionView *dribbbleView;
 @property (strong, nonatomic) NSMutableArray *shots;
+@property (nonatomic, strong) NSCache *cachedImages;
 
 @end
