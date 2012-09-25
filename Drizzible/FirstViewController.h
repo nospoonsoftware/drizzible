@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface FirstViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource>
 
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UICollectionView *dribbbleView;
 @property (strong, nonatomic) NSMutableArray *shots;
 
 @end

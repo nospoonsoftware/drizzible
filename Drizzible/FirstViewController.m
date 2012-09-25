@@ -9,43 +9,48 @@
 #import "FirstViewController.h"
 
 @interface FirstViewController ()
+@property (nonatomic, strong) NSCache *cachedImages;
 @end
 
 @implementation FirstViewController
 
-@synthesize tableView, shots;
-
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [shots count];
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [self.shots count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)theTable cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell      = [theTable dequeueReusableCellWithIdentifier:@"ShotCell"];
-    UIImageView     *imageView = (UIImageView*)[cell viewWithTag:1];
-
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"shotCell" forIndexPath:indexPath];
+    UIImageView *imageView = (UIImageView*)[cell viewWithTag:1];
+    
     [imageView setImage: [UIImage imageNamed:@"icon"]];
     
     int expectedRow = indexPath.row;
-
-    NSString *url = [[shots objectAtIndex: indexPath.row] objectForKey:@"image_url"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
-                             
-    [NSURLConnection sendAsynchronousRequest:request
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:
-     ^(NSURLResponse *response, NSData *data, NSError *error) {
-         if(error) {
-             NSLog(@"%@", error);
-         }
-         
-         if(expectedRow == indexPath.row) {
-             imageView.image = [UIImage imageWithData:data];
-             [imageView setNeedsDisplay];
-         }
-     }];
     
+    NSString *url = [[self.shots objectAtIndex: indexPath.row] objectForKey:@"image_url"];
+    UIImage *cachedImage = [self.cachedImages objectForKey:url];
+    if(cachedImage){
+        imageView.image = cachedImage;
+    } else {
+    
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+        
+        [NSURLConnection sendAsynchronousRequest:request
+                                           queue:[NSOperationQueue mainQueue]
+                               completionHandler:
+         ^(NSURLResponse *response, NSData *data, NSError *error) {
+             if(error) {
+                 NSLog(@"%@", error);
+             }
+             
+             if(expectedRow == indexPath.row) {
+                 UIImage *image = [UIImage imageWithData:data];
+                 imageView.image = image;
+                 [self.cachedImages setObject:image forKey:url];
+                 [imageView setNeedsDisplay];
+             }
+         }];
+    }
+
     return cell;
 }
 
@@ -53,12 +58,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.shots = [[NSMutableArray alloc] init];
-    self.tableView.rowHeight = 150;
+    self.cachedImages = [NSCache new];
+    self.shots = [NSMutableArray new];
 }
 
 -(void) viewWillAppear:(BOOL)animated {
+    
     [super viewWillAppear:animated];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://api.dribbble.com/shots/everyone?per_page=30"]];
     
@@ -81,14 +86,15 @@
                           error:&error];
     
     for(NSDictionary *shot in [json objectForKey:@"shots"]) {
+        NSLog(@"%@", shot);
         [self.shots addObject: shot];
     }
     
-    [self.tableView reloadData];
+    [self.dribbbleView reloadData];
 }
 
 - (void)viewDidUnload {
-    self.tableView = nil;
+    self.dribbbleView = nil;
     self.shots = nil;
     [super viewDidUnload];
 }
