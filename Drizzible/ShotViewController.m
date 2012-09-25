@@ -10,25 +10,11 @@
 #import "ShotsViewController.h"
 
 @interface ShotViewController ()
-@property (weak, nonatomic)   IBOutlet UIImageView *detailImageView;
-@property (weak, nonatomic)   IBOutlet UINavigationBar *toolbar;
+@property (weak, nonatomic) IBOutlet UIImageView *detailImageView;
+@property (weak, nonatomic) IBOutlet UINavigationBar *toolbar;
 @end
 
 @implementation ShotViewController
-
-- (void)setItemImage:(UIImage *)itemImage{
-    self.detailImageView.image = itemImage;
-    [self.detailImageView setNeedsDisplay];
-    _itemImage = itemImage;
-}
-
-- (void)setItemName:(NSString *)itemName{
-    if([self.itemName isEqualToString:itemName]) return;
-    self.toolbar.topItem.title = itemName;
-    self.title = itemName;
-    _itemName = itemName;
-    [self.view setNeedsLayout];
-}
 
 - (void)viewDidLoad
 {
