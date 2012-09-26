@@ -11,7 +11,6 @@
 @interface ShotsViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UICollectionView *dribbbleView;
-@property (strong, nonatomic) NSMutableArray *shots;
-@property (nonatomic, strong) NSCache *cachedImages;
+@property (strong, nonatomic) NSArray *shots;
 
 @end

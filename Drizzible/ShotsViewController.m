@@ -9,6 +9,13 @@
 #import "ShotsViewController.h"
 #import "ShotViewController.h"
 
+@interface ShotsViewController ()
+@property (nonatomic, strong) NSCache *cachedImages;
+
+- (void)requestShots:(void(^)(NSData *data))complete;
+- (NSArray *)serializeJSONData:(NSData *)responseData;
+@end
+
 @implementation ShotsViewController
 
 #pragma mark -
@@ -28,11 +35,10 @@
 #pragma mark -
 #pragma mark Shots stuff
 
-- (void)requestShots {
+- (void)requestShots:(void(^)(NSData *data))complete {
     if(self.shots.count > 0) { return; }
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://api.dribbble.com/shots/popular?per_page=50"]];
-    
     [NSURLConnection sendAsynchronousRequest:request
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:
@@ -40,22 +46,23 @@
          if(error) {
              NSLog(@"%@", error);
          }
-         [self parseShotsWith: data];
+         if(complete)
+             complete(data);
      }];
 }
 
-- (void)parseShotsWith:(NSData *)responseData {
+- (NSArray *)serializeJSONData:(NSData *)responseData {
     NSError* error;
     NSDictionary* json = [NSJSONSerialization
                           JSONObjectWithData:responseData
                           options:NSJSONReadingMutableContainers
                           error:&error];
-    
+    NSMutableArray *tempShotsArr = [NSMutableArray arrayWithCapacity:0];
     for(NSDictionary *shot in [json objectForKey:@"shots"]) {
-        [self.shots addObject: shot];
+        [tempShotsArr addObject: shot];
     }
     
-    [self.dribbbleView reloadData];
+    return [NSArray arrayWithArray:tempShotsArr];
 }
 
 #pragma mark -
@@ -76,7 +83,17 @@
 -(void) viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-    [self requestShots];
+    [self requestShots:^(NSData *data){
+        if(data){
+            self.shots = [self serializeJSONData: data];
+            [self.dribbbleView reloadData];
+        } else {
+            [[[UIAlertView alloc] initWithTitle:@"Data load failed."
+                                       message:@"could not process at this time."
+                                      delegate:self cancelButtonTitle:@"ok"
+                             otherButtonTitles: nil] show];
+        }
+    }];
 }
 
 
