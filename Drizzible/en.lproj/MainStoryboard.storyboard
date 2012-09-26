@@ -72,9 +72,14 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Shot" id="aHS-4O-TPX">
-                                        <barButtonItem key="leftBarButtonItem" title="Done" id="JCg-Gm-AcI">
+                                        <barButtonItem key="leftBarButtonItem" title="Done" style="done" id="JCg-Gm-AcI">
                                             <connections>
                                                 <action selector="done:" destination="DK8-Ng-YhC" id="wqG-sY-LIy"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="ubu-aN-q9q">
+                                            <connections>
+                                                <action selector="openMail:" destination="DK8-Ng-YhC" id="Y1c-JJ-AQz"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -105,6 +110,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ShotViewController.h"/>
             <relationships>
                 <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="openMail:"/>
                 <relationship kind="outlet" name="detailImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="toolbar" candidateClass="UINavigationBar"/>
             </relationships>

@@ -43,7 +43,7 @@
              }
              
              if(expectedRow == indexPath.row) {
-                 UIImage *image = [UIImage imageWithData:data];
+                 UIImage *image  = [UIImage imageWithData:data];
                  imageView.image = image;
                  [self.cachedImages setObject:image forKey:url];
                  [imageView setNeedsDisplay];
@@ -58,17 +58,18 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [[self.dribbbleView indexPathsForSelectedItems] lastObject];
-        NSDictionary *object = [[self shots] objectAtIndex:indexPath.row];
+        NSDictionary *object   = [[self shots] objectAtIndex:indexPath.row];
         ShotViewController *vc = (ShotViewController *)[segue destinationViewController];
         vc.itemImage = [self.cachedImages objectForKey:[object valueForKey:@"image_url"]];
-        vc.itemName = [object valueForKey:@"title"];
+        vc.itemName  = [object valueForKey:@"title"];
+        vc.itemURL   = [object valueForKey:@"url"];
     }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.cachedImages = [NSCache new];
-    self.shots = [NSMutableArray new];
+    self.shots        = [NSMutableArray new];
 }
 
 -(void) viewWillAppear:(BOOL)animated {

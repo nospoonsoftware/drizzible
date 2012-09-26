@@ -16,10 +16,8 @@
 
 @implementation ShotViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
     
     if(self.itemImage){
         self.detailImageView.image = self.itemImage;
@@ -28,6 +26,32 @@
     if(self.itemName){
         self.toolbar.topItem.title = self.itemName;
     }
+}
+
+- (IBAction)openMail:(id)sender {
+    if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
+        [mailer setMailComposeDelegate:self];
+        [mailer setModalPresentationStyle: UIModalPresentationFormSheet];
+        [mailer setMessageBody:self.itemURL isHTML:NO];
+        [mailer setSubject:@"Shot from Dribbble"];
+        [mailer addAttachmentData:UIImagePNGRepresentation(self.detailImageView.image)
+                         mimeType:@"image/png"
+                         fileName:@"shot"];
+        [self presentModalViewController:mailer animated:YES];
+    }
+    else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failure"
+                                                        message:@"Your device doesn't support the composer sheet"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -42,7 +66,7 @@
     return YES;
 }
 
--(IBAction)done:(id)sender{
+-(IBAction)done:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
