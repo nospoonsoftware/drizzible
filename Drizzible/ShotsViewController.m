@@ -43,9 +43,9 @@
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:
      ^(NSURLResponse *response, NSData *data, NSError *error) {
-         if(error) {
+         if(error)
              NSLog(@"%@", error);
-         }
+
          if(complete)
              complete(data);
      }];
@@ -111,7 +111,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"shotCell" forIndexPath:indexPath];
     UIImageView *imageView = (UIImageView*)[cell viewWithTag:1];
-    
+
     [imageView setImage: [UIImage imageNamed:@"icon"]];
     
     int expectedRow = indexPath.row;
@@ -121,17 +121,14 @@
     if(cachedImage){
         imageView.image = cachedImage;
     } else {
-        
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
         
         [NSURLConnection sendAsynchronousRequest:request
                                            queue:[NSOperationQueue mainQueue]
                                completionHandler:
          ^(NSURLResponse *response, NSData *data, NSError *error) {
-             if(error) {
-                 NSLog(@"%@", error);
-             }
-             
+             if(error) { NSLog(@"%@", error); }
+
              if(expectedRow == indexPath.row) {
                  UIImage *image  = [UIImage imageWithData:data];
                  imageView.image = image;
@@ -142,6 +139,10 @@
     }
     
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
 }
 
 @end

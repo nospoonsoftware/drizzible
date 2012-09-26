@@ -37,9 +37,6 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <connections>
-                                            <segue destination="DK8-Ng-YhC" kind="modal" identifier="showDetail" id="qnG-c4-9Cl"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
