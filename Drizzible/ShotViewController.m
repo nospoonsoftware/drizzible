@@ -16,18 +16,6 @@
 
 @implementation ShotViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    if(self.itemImage){
-        self.detailImageView.image = self.itemImage;
-    }
-    
-    if(self.itemName){
-        self.toolbar.topItem.title = self.itemName;
-    }
-}
-
 - (IBAction)openMail:(id)sender {
     if ([MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
@@ -54,20 +42,35 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
--(void) viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+-(IBAction)done:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark -
+#pragma mark View Events and Setup
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    if(self.itemImage){
+        self.detailImageView.image = self.itemImage;
+    }
+    
+    if(self.itemName){
+        self.toolbar.topItem.title = self.itemName;
+    }
 }
 
 - (void)viewDidUnload {
     [super viewDidUnload];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return YES;
+-(void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
 }
 
--(IBAction)done:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return YES;
 }
 
 @end
